@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Movie</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<header>
+    <h1>Movie Ratings</h1>
+    <button>
+        <a href="/movies">all movies</a>
+    </button>
+    <button>
+        <a href="/movies/home">home</a>
+    </button>
+</header>
+
+<body>
+    <form action='/movies/new' method='POST'>
+        <input id='title' type="text" name='title' placeholder='title' value="">
+        <input id='director' type="text" name='director' placeholder='director' value="">
+        <input id='year' type="text" name='year' placeholder='year' value="">
+        <input id='myRating' type="text" name='myRating' placeholder='your rating' value="">
+        <input id='posterURL' type="text" name='posterURL' placeholder='poster url' value="">
+        <input class="submit" type="submit" value='add new movie!'>
+    </form>
+</body>
+
+</html>

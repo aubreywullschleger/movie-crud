@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List o' Movies</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<header>
+    <h1>Movie Ratings</h1>
+    <button>
+        <a href="/movies">all movies</a>
+    </button>
+    <button>
+        <a href="/movies/home">home</a>
+    </button>
+    <button>
+        <a href="/movies/new">add movie</a>
+    </button>
+</header>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th>My rating</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#movies}}
+            <tr>
+                <td>
+                    <a href="movies/{{_id}}/show" class="title">{{title}}</a></td>
+                <td>{{director}}</td>
+                <td>{{year}}</td>
+                <td>{{myRating}}</td>
+                <td>
+                    <button class="edit"><a href="movies/{{_id}}/edit">Edit Movie</a></button>
+                </td>
+                <td>
+                    <form action="/movies/{{_id}}/delete" method="post">
+                        <input type="submit" value="Delete Movie" class="delete">
+                    </form>
+                </td>
+            </tr>{{/movies}}
+        </tbody>
+    </table>
+</body>
+
+</html>
